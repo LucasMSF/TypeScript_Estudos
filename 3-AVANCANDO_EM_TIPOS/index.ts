@@ -136,3 +136,9 @@ console.log(myP!.innerText);
 //Bigint (Exemplo de alteração do ts.config)
 let bigNum: bigint = 100321312300n + 300321312300n;
 console.log(bigNum, typeof bigNum);
+
+//Symbol
+let SymbolA: symbol = Symbol("a");
+let SymbolB: symbol = Symbol("a");
+
+console.log(SymbolA == SymbolB, SymbolA === SymbolB);
