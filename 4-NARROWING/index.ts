@@ -1,4 +1,4 @@
-//Type Guard
+//1 Type Guard
 type sumVar = string | number;
 
 function sum(a: sumVar, b: sumVar): void {
@@ -11,7 +11,7 @@ sum("1", "5");
 sum(1, 5);
 sum("1", 5);
 
-//checando se valor existe
+//2 checando se valor existe
 function operation(nums: number[], op?: string | undefined): void {
     if(op == "multiply") console.log(nums.reduce((last, current) => last * current));
     else console.log(nums.reduce((last, current) => last + current));
@@ -20,7 +20,7 @@ function operation(nums: number[], op?: string | undefined): void {
 operation([2, 3], "multiply");
 operation([2, 3]);
 
-//instaceof
+//3 instaceof
 
 class User {
     public name: string;
@@ -58,7 +58,7 @@ function userWelcome(user: object): void {
 userWelcome(user);
 userWelcome(superUser);
 
-//Operador in
+//4 Operador in
 class Dog {
     public name: string;
     public breed: string;
