@@ -64,3 +64,24 @@ function doSomething(x) {
         console.log(x);
 }
 doSomething([1, 2, 3]);
+//9 Retorno Never (Funciona como Void)
+function showError(e) {
+    throw new Error(e);
+}
+//showError("Lançamento de erro");
+//10 Rest Operator
+function sumAll() {
+    var nums = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        nums[_i] = arguments[_i];
+    }
+    return nums.reduce(function (total, current) { return total + current; });
+}
+console.log(sumAll(1, 2, 3));
+console.log(sumAll(1211, 2121, 31, 89907));
+//11 destructuring como parâmetro
+function showDetails(_a) {
+    var name = _a.name, price = _a.price;
+    return "O nome do produto \u00E9 ".concat(name, " e ele custa ").concat(price);
+}
+console.log(showDetails({ name: 'Celular', price: 1999.99 }));

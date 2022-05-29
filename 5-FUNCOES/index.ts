@@ -71,3 +71,25 @@ function doSomething(x: unknown): void {
 }
 
 doSomething([1,2,3]);
+
+//9 Retorno Never (Funciona como Void)
+function showError(e: string): never {
+    throw new Error(e);
+}
+
+//showError("Lançamento de erro");
+
+//10 Rest Operator
+function sumAll(...nums: number[]): number {
+    return nums.reduce((total, current) => total + current);
+}
+
+console.log(sumAll(1,2,3));
+console.log(sumAll(1211,2121,31,89907));
+
+//11 destructuring como parâmetro
+function showDetails({name, price}: {name: string, price: number}): string {
+    return `O nome do produto é ${name} e ele custa ${price}`
+}
+
+console.log(showDetails({name: 'Celular', price: 1999.99}));
