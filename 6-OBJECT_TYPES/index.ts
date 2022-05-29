@@ -73,7 +73,7 @@ coords.z = 76;
 
 console.log(coords);
 
-//Extending interfaces
+//5 Extending interfaces
 interface Human {
     name: string,
     age: number
@@ -92,7 +92,7 @@ const shA: SuperHuman = {
 
 console.log(shA);
 
-//Intersection Types 
+//6 Intersection Types 
 interface Character {
     name: string
 }
@@ -110,3 +110,25 @@ const Arnold: CharacterGun = {
 }
 
 console.log(Arnold);
+
+//7 Readonly Arrays
+
+let myArray: ReadonlyArray<number> = [1,2,3];
+console.log(myArray);
+//myArray.push(4)
+
+//8 Tuplas
+
+type Tupla = [number, number];
+let tArray: Tupla = [1, 2]
+console.log(tArray);
+
+//9 Tupla com readonly
+
+type TuplaReadOnly = readonly [string, string];
+
+function showTupla(t: TuplaReadOnly): void {
+    console.log(t);
+}
+
+showTupla(['mamão', 'banana']);

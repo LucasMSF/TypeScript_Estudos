@@ -48,3 +48,12 @@ var Arnold = {
     caliber: 12
 };
 console.log(Arnold);
+//7 Readonly Arrays
+var myArray = [1, 2, 3];
+console.log(myArray);
+var tArray = [1, 2];
+console.log(tArray);
+function showTupla(t) {
+    console.log(t);
+}
+showTupla(['mamão', 'banana']);
