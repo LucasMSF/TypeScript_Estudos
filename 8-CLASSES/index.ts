@@ -93,3 +93,133 @@ console.log((new Dwarf('Luquinhas')).greeting());
 
 //6 this = keyword que referencia a instancia atual do objeto para chamar seus métodos e propriedades
 
+//7 Getters
+
+class Person {
+    name: string;
+    surname: string;
+
+    constructor(n: string, s: string) {
+        this.name = n;
+        this.surname = s;
+    }
+
+    get fullName() {
+        return this.name + " " + this.surname;
+    }
+}
+
+
+
+const Lucas = new Person('Lucas', 'Mathias');
+console.log(Lucas.fullName);
+
+//8 Setters
+
+class Coords {
+    x!: number;
+    y!: number;
+
+    set setX(x: number) {
+        this.x = x;    
+    }
+
+    set setY(y: number) {
+        this.y = y;
+    }
+
+    get getCoords(): {x: number, y: number} {
+        return {x: this.x, y: this.y};
+    }
+}
+
+const coords = new Coords;
+
+coords.setX = 18;
+coords.setY = 30;
+
+console.log(coords.getCoords);
+
+//9 Herança de interface
+interface showName {
+    get getName(): string
+}
+
+class PeopleWare implements showName {
+    private name: string;
+
+    constructor(n: string) {
+        this.name = n;
+    }
+
+    get getName(): string {
+        return 'Your name is ' + this.name;
+    }
+}
+
+console.log((new PeopleWare('Lucas')).getName);
+
+//10 Override de métodos
+class NewClass {
+    newMethod(): void {
+        console.log('Super Class');
+    }
+}
+
+class NewChildClass extends NewClass {
+    newMethod(): void {
+        console.log('Children Class');
+        super.newMethod();
+    }
+}
+
+const NCClass = new NewChildClass;
+NCClass.newMethod();
+
+//11 Visibilidades
+
+class Visibilities {
+    public v1: any //Visibilidade pública - Escopo geral
+    protected v2: any //Visibilidade pública - Escopo interno e subclasses
+    private v3: any //Visibilidade pública - Escopo interno
+}
+
+//12 Static Members
+
+class Static {
+    private static var: string = 'Static Var';
+
+    public static get getVar() {
+        return this.var;
+    }
+}
+console.log(Static.getVar);
+
+//13 Generic class
+
+class Item<T, U> {
+    first: T;
+    second: U;
+
+    constructor(f: T, s: U) {
+        this.first = f;
+        this.second = s;
+    }
+}
+
+console.log((new Item('Lucas', 18)));
+
+//14 Parameters Properties
+
+class Properties {
+    constructor(public name: string, private age: Number) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public get person() {
+        return `Name: ${this.name}, Age: ${this.age}`;
+    }
+}
+
+console.log((new Properties('Lucas', 18)).person);
