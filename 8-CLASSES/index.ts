@@ -223,3 +223,37 @@ class Properties {
 }
 
 console.log((new Properties('Lucas', 18)).person);
+
+//15 Class Expression
+
+const myClass = class<T> {
+    name: T
+
+    constructor(n: T) {
+        this.name = n
+    }
+}
+
+console.log((new myClass('Lucas class expression')).name);
+
+//16 Abstract Class
+
+abstract class AbsClass {
+    name: string
+
+    constructor(n: string) {
+        this.name = n
+    }
+
+    get showGreeting() {
+        return "Olá " + this.name + " Essa classe herda uma abstrata";
+    }
+}
+
+class AbsExtend extends AbsClass {
+    constructor(n: string) {
+        super(n);
+    }
+}
+
+console.log((new AbsExtend('Lucas')).showGreeting);

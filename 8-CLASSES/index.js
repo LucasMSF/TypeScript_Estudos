@@ -138,3 +138,25 @@ class Properties {
     }
 }
 console.log((new Properties('Lucas', 18)).person);
+//15 Class Expression
+const myClass = class {
+    constructor(n) {
+        this.name = n;
+    }
+};
+console.log((new myClass('Lucas class expression')).name);
+//16 Abstract Class
+class AbsClass {
+    constructor(n) {
+        this.name = n;
+    }
+    get showGreeting() {
+        return "Olá " + this.name + " Essa classe herda uma abstrata";
+    }
+}
+class AbsExtend extends AbsClass {
+    constructor(n) {
+        super(n);
+    }
+}
+console.log((new AbsExtend('Lucas')).showGreeting);
