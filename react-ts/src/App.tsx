@@ -15,7 +15,7 @@ function App() {
 	const age: number = 19;
 	const isWorking: boolean = true;
 
-	//EDU2 - Variáveis
+	//EDU2 - Funções
 	function greeting(name: string) {
 		return `Olá ${name}, seja bem-vindo!`;
 	}
