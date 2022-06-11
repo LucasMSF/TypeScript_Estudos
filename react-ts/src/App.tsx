@@ -1,6 +1,14 @@
 import React from 'react';
 import './App.css';
 
+//EDU4 Importação de componentes
+import FirstComponent from "./components/FirstComponent";
+import SecondComponent from "./components/SecondComponent";
+//EDU5 desestruturação de props
+import Destructuring, { UserTypes } from './components/Destructuring';
+//EDU 6 Usando Hooks (useState)
+import State from './components/State';
+
 function App() {
 	//EDU1 - Variáveis
 	const name: string = 'Lucas Mathias';
@@ -20,7 +28,10 @@ function App() {
 			<h4>Trabalhando atualmente? : {isWorking ? 'Sim' : 'Não'}</h4>
 			<br/>
 			<h1>{greeting(name)}</h1>
-
+			<FirstComponent />
+			<SecondComponent name='Lucas' />
+			<Destructuring user='lmathias' name='Lucas Mathias' status={true} userType={UserTypes.Ad} />
+			<State />
 		</div>
 	);
 }
